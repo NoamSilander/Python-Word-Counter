@@ -18,11 +18,15 @@ def word_counter(words):
             word_dict[word] = 1
         elif word in word_dict:
             word_dict[word] += 1
-    print(word_dict)
+    return word_dict
+
 
 def main(file):
     words = text_cleaner(file)
-    word_counter(words)
+    word_dict = word_counter(words)
+    for word, count in word_dict.items():
+         print(f'{word}: {count}')
 
 
-main('text.txt')
+if __name__ == '__main__':
+    main('text.txt')
