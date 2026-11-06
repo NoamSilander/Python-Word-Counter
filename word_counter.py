@@ -11,4 +11,18 @@ def text_cleaner(file):
                 words_clean.append(clean_word)
     return words_clean
 
-word_counter('text.txt')
+def word_counter(words):
+    word_dict = {}
+    for word in words:
+        if word not in word_dict:
+            word_dict[word] = 1
+        elif word in word_dict:
+            word_dict[word] += 1
+    print(word_dict)
+
+def main(file):
+    words = text_cleaner(file)
+    word_counter(words)
+
+
+main('text.txt')
